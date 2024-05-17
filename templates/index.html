@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1>Estou pensando em um número de 1 a 100.</h1>
+        <form method="POST">
+            <label for="tentativa">Tente adivinhar:</label>
+            <input type="number" id="tentativa" name="tentativa" required placeholder="Digite um número">
+            <button type="submit">Enviar</button>
+        </form>
+        <p>{{ mensagem }}</p>
+    </div>
+    <script>
+        // JavaScript para definir o foco no campo de entrada
+        window.onload = function() {
+            document.getElementById('tentativa').focus();
+        };
+    </script>
+</body>
+</html>
